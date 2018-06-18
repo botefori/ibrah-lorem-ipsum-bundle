@@ -16,5 +16,13 @@
         "psr-4": {
             "KnpU\\LoremIpsumIbrahBundle\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KnpU\\LoremIpsumIbrahBundle\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.1"
     }
 }
