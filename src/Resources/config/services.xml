@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="knpu_lorem_ipsum.knpu_ipsum"  class="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" public="true">
+            <argument type="service" id="knpu_lorem_ipsum.kpnu_word_provider"/>
+        </service>
+        <service id="knpu_lorem_ipsum.word_provider"  class="KnpU\LoremIpsumIbrahBundle\KnpUWordProvider" public="true"/>
+        <service id="knpu_lorem_ipsum.word_provider"  alias="knpu_lorem_ipsum.kpnu_word_provider"/>
+        <service id="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="true"/>
+    </services>
+</container>
