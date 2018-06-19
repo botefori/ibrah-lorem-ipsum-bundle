@@ -5,11 +5,14 @@
         http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="knpu_lorem_ipsum.knpu_word_provider"  class="KnpU\LoremIpsumIbrahBundle\KnpUWordProvider" public="true"/>
+
+        <service id="knpu_lorem_ipsum.word_provider"  alias="knpu_lorem_ipsum.knpu_word_provider" public="false"/>
+
         <service id="knpu_lorem_ipsum.knpu_ipsum"  class="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" public="true">
-            <argument type="service" id="knpu_lorem_ipsum.kpnu_word_provider"/>
+            <argument key="$wordProvider" type="service" id="knpu_lorem_ipsum.word_provider"/>
         </service>
-        <service id="knpu_lorem_ipsum.word_provider"  class="KnpU\LoremIpsumIbrahBundle\KnpUWordProvider" public="true"/>
-        <service id="knpu_lorem_ipsum.word_provider"  alias="knpu_lorem_ipsum.kpnu_word_provider"/>
-        <service id="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="true"/>
+
+        <service id="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false"/>
     </services>
 </container>
