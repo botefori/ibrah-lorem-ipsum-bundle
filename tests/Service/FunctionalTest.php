@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: icamara
- * Date: 19/06/18
- * Time: 10:12
- */
+declare(strict_types=1);
 
 namespace KnpU\LoremIpsumIbrahBundle\Tests;
 
