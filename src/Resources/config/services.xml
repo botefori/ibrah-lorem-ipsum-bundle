@@ -13,6 +13,10 @@
             <argument key="$wordProvider" type="service" id="knpu_lorem_ipsum.word_provider"/>
         </service>
 
+        <service id="knpu_lorem_ipsum.api_controller"  class="KnpU\LoremIpsumIbrahBundle\Controller\IpsumApiController" public="true">
+            <argument key="$knpUIpsum" type="service" id="knpu_lorem_ipsum.knpu_ipsum"/>
+        </service>
+
         <service id="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false"/>
     </services>
 </container>
