@@ -15,6 +15,7 @@
 
         <service id="knpu_lorem_ipsum.api_controller"  class="KnpU\LoremIpsumIbrahBundle\Controller\IpsumApiController" public="true">
             <argument key="$knpUIpsum" type="service" id="knpu_lorem_ipsum.knpu_ipsum"/>
+            <argument key="$dispatcher" type="service" id="event_dispatcher" on-invalid="null"/>
         </service>
 
         <service id="KnpU\LoremIpsumIbrahBundle\KnpUIpsum" alias="knpu_lorem_ipsum.knpu_ipsum" public="false"/>
