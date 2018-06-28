@@ -9,6 +9,7 @@
 namespace KnpU\LoremIpsumIbrahBundle\Controller;
 
 use KnpU\LoremIpsumIbrahBundle\Event\FilterApiResponseEvent;
+use KnpU\LoremIpsumIbrahBundle\Event\KnpULoremIpsumEvents;
 use KnpU\LoremIpsumIbrahBundle\KnpUIpsum;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -40,7 +41,7 @@ class IpsumApiController extends AbstractController
         $event = new FilterApiResponseEvent($data);
         if($this->dispatcher !==null)
         {
-            $this->dispatcher->dispatch('knpu_lorem_ipsum.filter', $event);
+            $this->dispatcher->dispatch(KnpULoremIpsumEvents::FILTER_API, $event);
         }
         return $this->json($event->getData());
     }
