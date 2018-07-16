@@ -3,5 +3,5 @@ composer.lock
 /phpunit.xml
 /vendor/
 tests/Service/cache/
-tests/Controller
+tests/Controller/
 
